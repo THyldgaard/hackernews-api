@@ -10,6 +10,7 @@ type Story = {
   by: string;
   url: string;
   score: number;
+  text: String;
   time: number;
   type: string;
   descendants: number;
