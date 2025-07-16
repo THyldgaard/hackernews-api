@@ -10,10 +10,7 @@ router.get('/', async (_req, res) => {
 
 router.get('/refresh', async (_req, res) => {
   const stories = await getStories(true);
-  res.json({
-    message: 'Stories refreshed',
-    count: stories.length
-  });
+  res.json(stories);
 });
 
 export default router;
