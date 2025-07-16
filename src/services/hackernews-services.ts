@@ -36,7 +36,7 @@ export async function getStories(forceRefresh = false): Promise<Story[]> {
 
   try {
     const { data: storyIds }: { data: number[] } = await axios.get(STORIES_URL);
-    const topIds = storyIds.slice(0, 10); 
+    const topIds = storyIds.slice(0, 20); 
     const storyPromises = topIds.map(id => axios.get(ITEM_URL(id)).then(res => res.data));
     const stories = await Promise.all(storyPromises);
 
